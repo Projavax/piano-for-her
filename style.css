@@ -1,91 +1,62 @@
-/* 🌸 General page styling */
 body {
   font-family: 'Helvetica Neue', sans-serif;
   text-align: center;
-  background: #fff0f5; /* Light lavender pink */
+  background: #fff0f5;
   padding: 1rem;
   margin: 0;
-  overflow-x: hidden;
 }
 
 h1 {
   font-size: 1.4rem;
   margin-bottom: 1rem;
-  color: #a64ca6; /* Purple title */
+  color: #a64ca6;
 }
 
-/* 🎹 Piano layout */
 .piano {
-  display: flex;
-  justify-content: center;
-  gap: 2px;
-  max-width: 100%;
-  overflow-x: auto;
-  padding: 0 1rem;
-}
-
-/* Each white key + black key pair container */
-.white-wrapper {
   position: relative;
+  width: 420px; /* 60px * 7 white keys */
+  margin: 0 auto;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  justify-content: start;
+  gap: 0;
 }
 
-/* 🎀 White key styling */
+.key {
+  border: none;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.1s ease-in-out;
+}
+
 .white {
   width: 60px;
   height: 180px;
-  background-color: #ffccdd; /* Light pink */
+  background-color: #ffccdd;
   border-radius: 14px;
-  border: none;
   z-index: 1;
-  cursor: pointer;
-  user-select: none;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
-  transition: transform 0.1s ease-in-out;
 }
 
-.white:active {
-  transform: scale(0.96);
-}
-
-/* 💜 Black key styling */
 .black {
   position: absolute;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 35px;
+  width: 40px;
   height: 110px;
-  background-color: #5c217b; /* Dark purple */
+  background-color: #5c217b;
   border-radius: 8px 8px 12px 12px;
-  border: none;
   z-index: 2;
-  cursor: pointer;
-  user-select: none;
+  transform: translateX(-50%);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
-  transition: transform 0.1s ease-in-out;
 }
 
-.black:active {
-  transform: translateX(-50%) scale(0.96);
-}
+/* Optional: mobile tweaks */
+@media screen and (max-width: 480px) {
+  .piano {
+    width: 100%;
+    overflow-x: scroll;
+  }
 
-/* ❤️ Secret message */
-#message {
-  font-size: 1.2rem;
-  margin-top: 1.5rem;
-  color: #ff69b4; /* Hot pink */
-  display: none;
-}
-
-#message.show {
-  display: block;
-}
-
-/* 📱 Mobile landscape optimization (Galaxy S21 FE) */
-@media screen and (max-height: 450px) and (min-width: 700px) {
   .white {
     width: 50px;
     height: 150px;
@@ -93,10 +64,6 @@ h1 {
 
   .black {
     width: 30px;
-    height: 95px;
-  }
-
-  h1 {
-    font-size: 1.1rem;
+    height: 90px;
   }
 }

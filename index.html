@@ -1,44 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>My Piano for You</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.35/Tone.min.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Her Piano</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <h1>🎹 For My Favorite Pianist 🎶</h1>
-<div class="piano">
-  <div class="white-wrapper">
+
+  <div class="piano">
+    <!-- White keys -->
     <button class="key white" data-note="C4">C</button>
-    <button class="key black" data-note="C#4"></button>
-  </div>
-  <div class="white-wrapper">
     <button class="key white" data-note="D4">D</button>
-    <button class="key black" data-note="D#4"></button>
-  </div>
-  <div class="white-wrapper">
     <button class="key white" data-note="E4">E</button>
-  </div>
-  <div class="white-wrapper">
     <button class="key white" data-note="F4">F</button>
-    <button class="key black" data-note="F#4"></button>
-  </div>
-  <div class="white-wrapper">
     <button class="key white" data-note="G4">G</button>
-    <button class="key black" data-note="G#4"></button>
-  </div>
-  <div class="white-wrapper">
     <button class="key white" data-note="A4">A</button>
-    <button class="key black" data-note="A#4"></button>
-  </div>
-  <div class="white-wrapper">
     <button class="key white" data-note="B4">B</button>
+
+    <!-- Black keys -->
+    <button class="key black" data-note="C#4" style="left: 45px;"></button>
+    <button class="key black" data-note="D#4" style="left: 105px;"></button>
+    <!-- No black key between E and F -->
+    <button class="key black" data-note="F#4" style="left: 225px;"></button>
+    <button class="key black" data-note="G#4" style="left: 285px;"></button>
+    <button class="key black" data-note="A#4" style="left: 345px;"></button>
   </div>
-</div>
-
-  <div id="message" class="hidden">❤️ You found the secret melody ❤️</div>
-
-  <script src="script.js"></script>
 </body>
 </html>
